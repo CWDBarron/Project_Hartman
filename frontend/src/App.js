@@ -249,7 +249,7 @@ const ClassCard = ({ classData, onClick, isLoggedIn }) => {
           className="w-full h-48 object-cover group-hover:scale-105 transition-transform duration-300"
         />
         {classData.featured && (
-          <div className="absolute top-3 left-3 bg-green-500 text-white px-2 py-1 rounded-full text-xs font-semibold">
+          <div className="absolute top-3 left-3 bg-connectwise-primary text-white px-2 py-1 rounded-full text-xs font-semibold">
             Featured
           </div>
         )}
@@ -259,7 +259,7 @@ const ClassCard = ({ classData, onClick, isLoggedIn }) => {
       </div>
       
       <div className="p-5">
-        <h3 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-green-600 transition-colors">
+        <h3 className="font-bold text-lg mb-2 text-gray-900 group-hover:text-connectwise-primary transition-colors">
           {classData.title}
         </h3>
         <p className="text-gray-600 text-sm mb-3 line-clamp-2">
@@ -281,7 +281,7 @@ const ClassCard = ({ classData, onClick, isLoggedIn }) => {
           </div>
           <div className="w-full bg-gray-200 rounded-full h-2">
             <motion.div 
-              className="bg-green-500 h-2 rounded-full"
+              className="bg-connectwise-primary h-2 rounded-full"
               initial={{ width: 0 }}
               animate={{ width: `${Math.min(fundingPercentage, 100)}%` }}
               transition={{ duration: 1.2, ease: "easeOut" }}
@@ -300,9 +300,9 @@ const ClassCard = ({ classData, onClick, isLoggedIn }) => {
                 {enrollmentPercentage}% full
               </span>
             </div>
-            <div className="w-full bg-blue-100 rounded-full h-1.5">
+            <div className="w-full bg-connectwise-light rounded-full h-1.5">
               <motion.div 
-                className="bg-blue-500 h-1.5 rounded-full"
+                className="bg-connectwise-secondary h-1.5 rounded-full"
                 initial={{ width: 0 }}
                 animate={{ width: `${enrollmentPercentage}%` }}
                 transition={{ duration: 1, ease: "easeOut", delay: 0.3 }}
@@ -322,7 +322,7 @@ const ClassCard = ({ classData, onClick, isLoggedIn }) => {
               <span>{classData.timeLeft}</span>
             </div>
           </div>
-          <div className="font-bold text-green-600">
+          <div className="font-bold text-connectwise-primary">
             ${classData.pricePerPerson}
           </div>
         </div>
@@ -398,7 +398,7 @@ const ClassModal = ({ classData, isOpen, onClose, isLoggedIn }) => {
                 {/* Funding Progress */}
                 <div className="bg-gray-50 rounded-lg p-4 mb-6">
                   <div className="flex justify-between items-center mb-2">
-                    <span className="text-lg font-bold text-green-600">
+                    <span className="text-lg font-bold text-connectwise-primary">
                       ${classData.currentFunding.toLocaleString()}
                     </span>
                     <span className="text-sm text-gray-500">
@@ -407,7 +407,7 @@ const ClassModal = ({ classData, isOpen, onClose, isLoggedIn }) => {
                   </div>
                   <div className="w-full bg-gray-200 rounded-full h-3 mb-3">
                     <div 
-                      className="bg-green-500 h-3 rounded-full transition-all duration-1000"
+                      className="bg-connectwise-primary h-3 rounded-full transition-all duration-1000"
                       style={{ width: `${Math.min(fundingPercentage, 100)}%` }}
                     />
                   </div>
@@ -429,19 +429,19 @@ const ClassModal = ({ classData, isOpen, onClose, isLoggedIn }) => {
                 
                 {/* Enrollment Status (only for logged in users) */}
                 {isLoggedIn && (
-                  <div className="bg-blue-50 rounded-lg p-4 mb-6">
+                  <div className="bg-connectwise-light rounded-lg p-4 mb-6">
                     <h3 className="font-bold text-lg mb-2">Class Capacity</h3>
                     <div className="flex justify-between items-center mb-2">
-                      <span className="text-blue-600 font-semibold">
+                      <span className="text-connectwise-secondary font-semibold">
                         {classData.currentEnrollment} enrolled
                       </span>
                       <span className="text-sm text-gray-500">
                         {classData.maxCapacity} max capacity
                       </span>
                     </div>
-                    <div className="w-full bg-blue-200 rounded-full h-2 mb-2">
+                    <div className="w-full bg-connectwise-secondary bg-opacity-20 rounded-full h-2 mb-2">
                       <div 
-                        className="bg-blue-500 h-2 rounded-full transition-all duration-1000"
+                        className="bg-connectwise-secondary h-2 rounded-full transition-all duration-1000"
                         style={{ width: `${enrollmentPercentage}%` }}
                       />
                     </div>
@@ -457,7 +457,7 @@ const ClassModal = ({ classData, isOpen, onClose, isLoggedIn }) => {
                   <div className="space-y-2">
                     {classData.syllabus.map((item, index) => (
                       <div key={index} className="flex items-start gap-3 p-2 rounded hover:bg-gray-50">
-                        <div className="bg-green-100 text-green-600 rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold flex-shrink-0 mt-0.5">
+                        <div className="bg-connectwise-light text-connectwise-primary rounded-full w-6 h-6 flex items-center justify-center text-sm font-semibold flex-shrink-0 mt-0.5">
                           {index + 1}
                         </div>
                         <span className="text-gray-700">{item}</span>
@@ -467,7 +467,7 @@ const ClassModal = ({ classData, isOpen, onClose, isLoggedIn }) => {
                 </div>
                 
                 <div className="mt-6 pt-6 border-t">
-                  <button className="w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-lg transition-colors">
+                  <button className="w-full bg-connectwise-primary hover:bg-connectwise-secondary text-white font-bold py-3 px-6 rounded-lg transition-colors">
                     {isLoggedIn ? 'Enroll Now' : 'Sign In to Enroll'}
                   </button>
                 </div>
@@ -490,8 +490,8 @@ const Header = ({ isLoggedIn, onToggleLogin, searchTerm, onSearchChange }) => {
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <h1 className="text-2xl font-bold text-green-600">SkillFunder</h1>
-            <span className="ml-2 text-sm text-gray-500 hidden sm:block">Training Classes</span>
+            <h1 className="text-2xl font-bold text-connectwise-primary">ConnectWise University Labs</h1>
+            <span className="ml-2 text-sm text-gray-500 hidden lg:block">Training Platform</span>
           </div>
           
           {/* Search Bar */}
@@ -503,7 +503,7 @@ const Header = ({ isLoggedIn, onToggleLogin, searchTerm, onSearchChange }) => {
                 placeholder="Search training classes..."
                 value={searchTerm}
                 onChange={(e) => onSearchChange(e.target.value)}
-                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-connectwise-primary focus:border-transparent"
               />
             </div>
           </div>
@@ -524,7 +524,7 @@ const Header = ({ isLoggedIn, onToggleLogin, searchTerm, onSearchChange }) => {
             
             <button
               onClick={onToggleLogin}
-              className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-2 rounded-lg transition-colors"
+              className="flex items-center gap-2 bg-connectwise-primary hover:bg-connectwise-secondary text-white px-4 py-2 rounded-lg transition-colors"
             >
               <User size={18} />
               <span className="hidden sm:block">
@@ -550,7 +550,7 @@ const Header = ({ isLoggedIn, onToggleLogin, searchTerm, onSearchChange }) => {
               placeholder="Search training classes..."
               value={searchTerm}
               onChange={(e) => onSearchChange(e.target.value)}
-              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-green-500 focus:border-transparent"
+              className="w-full pl-10 pr-4 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-connectwise-primary focus:border-transparent"
             />
           </div>
         </div>
@@ -562,7 +562,7 @@ const Header = ({ isLoggedIn, onToggleLogin, searchTerm, onSearchChange }) => {
 // Hero Section
 const HeroSection = ({ isLoggedIn }) => {
   return (
-    <div className="bg-gradient-to-r from-green-50 to-blue-50 py-16">
+    <div className="bg-gradient-to-r from-connectwise-light to-blue-50 py-16">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid md:grid-cols-2 gap-12 items-center">
           <motion.div
@@ -571,19 +571,19 @@ const HeroSection = ({ isLoggedIn }) => {
             transition={{ duration: 0.6 }}
           >
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Fund Your Next 
-              <span className="text-green-600"> Skill</span>
+              Advance Your 
+              <span className="text-connectwise-primary"> Skills</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8">
-              Discover amazing hands-on training classes taught by expert instructors. 
-              Back the classes you want to see happen and learn new skills with like-minded people.
+              Discover innovative hands-on training labs designed for professional growth. 
+              Support the classes you want to see and learn cutting-edge skills with industry experts.
             </p>
             <div className="flex gap-4">
-              <button className="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
-                Explore Classes
+              <button className="bg-connectwise-primary hover:bg-connectwise-secondary text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+                Explore Labs
               </button>
-              <button className="border border-green-500 text-green-600 hover:bg-green-50 px-8 py-3 rounded-lg font-semibold transition-colors">
-                {isLoggedIn ? 'Create Class' : 'Learn More'}
+              <button className="border border-connectwise-primary text-connectwise-primary hover:bg-connectwise-light px-8 py-3 rounded-lg font-semibold transition-colors">
+                {isLoggedIn ? 'Create Lab' : 'Learn More'}
               </button>
             </div>
           </motion.div>
@@ -601,12 +601,12 @@ const HeroSection = ({ isLoggedIn }) => {
             />
             <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-lg shadow-lg">
               <div className="flex items-center gap-3">
-                <div className="bg-green-100 p-2 rounded-full">
-                  <Star className="text-green-600" size={20} />
+                <div className="bg-connectwise-light p-2 rounded-full">
+                  <Star className="text-connectwise-primary" size={20} />
                 </div>
                 <div>
                   <div className="font-bold text-gray-900">5,000+</div>
-                  <div className="text-gray-500 text-sm">Happy Students</div>
+                  <div className="text-gray-500 text-sm">Active Learners</div>
                 </div>
               </div>
             </div>
@@ -644,7 +644,7 @@ const FilterControls = ({
                   onClick={() => onCategoryChange(category)}
                   className={`px-3 py-1 rounded-full text-sm transition-colors ${
                     selectedCategory === category
-                      ? 'bg-green-500 text-white'
+                      ? 'bg-connectwise-primary text-white'
                       : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                   }`}
                 >
@@ -660,7 +660,7 @@ const FilterControls = ({
                 type="checkbox"
                 checked={showFeaturedOnly}
                 onChange={(e) => onFeaturedToggle(e.target.checked)}
-                className="rounded text-green-500 focus:ring-green-500"
+                className="rounded text-connectwise-primary focus:ring-connectwise-primary"
               />
               <span className="text-sm text-gray-700">Featured only</span>
             </label>
@@ -670,7 +670,7 @@ const FilterControls = ({
               <select
                 value={sortBy}
                 onChange={(e) => onSortChange(e.target.value)}
-                className="border border-gray-300 rounded px-3 py-1 text-sm focus:ring-2 focus:ring-green-500 focus:border-transparent"
+                className="border border-gray-300 rounded px-3 py-1 text-sm focus:ring-2 focus:ring-connectwise-primary focus:border-transparent"
               >
                 <option value="funding">Funding %</option>
                 <option value="backers">Most Backed</option>
@@ -745,9 +745,9 @@ function App() {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
             <div className="flex justify-between items-center mb-8">
               <h2 className="text-2xl font-bold text-gray-900">
-                {isLoggedIn ? 'Available Training Classes' : 'Featured Training Classes'}
+                {isLoggedIn ? 'Available Training Labs' : 'Featured Training Labs'}
                 <span className="ml-2 text-sm font-normal text-gray-500">
-                  ({filteredClasses.length} classes)
+                  ({filteredClasses.length} labs)
                 </span>
               </h2>
             </div>
@@ -779,7 +779,7 @@ function App() {
                 <div className="text-gray-400 mb-4">
                   <BookOpen size={64} className="mx-auto" />
                 </div>
-                <h3 className="text-xl font-semibold text-gray-600 mb-2">No classes found</h3>
+                <h3 className="text-xl font-semibold text-gray-600 mb-2">No labs found</h3>
                 <p className="text-gray-500">Try adjusting your search or filters</p>
               </div>
             )}

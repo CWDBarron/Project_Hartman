@@ -96,7 +96,7 @@
 button:focus-visible,
 input:focus-visible,
 select:focus-visible {
-  outline: 2px solid #10b981;
+  outline: 2px solid #25698E;
   outline-offset: 2px;
 }
 
@@ -120,12 +120,118 @@ select:focus-visible {
   backdrop-filter: blur(4px);
 }
 
-/* Custom green theme colors to match Kickstarter */
+/* ConnectWise University Labs custom blue color palette */
 :root {
-  --primary-green: #10b981;
-  --primary-green-hover: #059669;
-  --primary-green-light: #d1fae5;
-  --text-primary: #111827;
-  --text-secondary: #6b7280;
-  --border-color: #e5e7eb;
+  --connectwise-dark: #1C2242;
+  --connectwise-medium: #1E4E71;
+  --connectwise-light-blue: #25698E;
+}
+
+/* Tailwind CSS custom colors for ConnectWise theme */
+.text-connectwise-primary {
+  color: #25698E;
+}
+
+.text-connectwise-secondary {
+  color: #1E4E71;
+}
+
+.text-connectwise-dark {
+  color: #1C2242;
+}
+
+.bg-connectwise-primary {
+  background-color: #25698E;
+}
+
+.bg-connectwise-secondary {
+  background-color: #1E4E71;
+}
+
+.bg-connectwise-dark {
+  background-color: #1C2242;
+}
+
+.bg-connectwise-light {
+  background-color: rgba(37, 105, 142, 0.1);
+}
+
+.border-connectwise-primary {
+  border-color: #25698E;
+}
+
+.hover\:bg-connectwise-primary:hover {
+  background-color: #25698E;
+}
+
+.hover\:bg-connectwise-secondary:hover {
+  background-color: #1E4E71;
+}
+
+.hover\:bg-connectwise-light:hover {
+  background-color: rgba(37, 105, 142, 0.1);
+}
+
+.hover\:text-connectwise-primary:hover {
+  color: #25698E;
+}
+
+.focus\:ring-connectwise-primary:focus {
+  --tw-ring-color: #25698E;
+}
+
+.focus\:border-connectwise-primary:focus {
+  border-color: #25698E;
+}
+
+/* Custom gradient for hero section */
+.bg-gradient-to-r.from-connectwise-light {
+  background: linear-gradient(to right, rgba(37, 105, 142, 0.05), rgba(59, 130, 246, 0.05));
+}
+
+/* Enhanced hover effects for ConnectWise theme */
+.group:hover .group-hover\:text-connectwise-primary {
+  color: #25698E;
+}
+
+/* Progress bar specific colors */
+.bg-connectwise-primary.h-2.rounded-full,
+.bg-connectwise-primary.h-3.rounded-full,
+.bg-connectwise-primary.h-1\.5.rounded-full {
+  background-color: #25698E;
+}
+
+.bg-connectwise-secondary.h-2.rounded-full,
+.bg-connectwise-secondary.h-3.rounded-full,
+.bg-connectwise-secondary.h-1\.5.rounded-full {
+  background-color: #1E4E71;
+}
+
+/* Button transitions */
+.transition-colors {
+  transition-property: color, background-color, border-color;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+/* Enhanced shadow effects */
+.shadow-connectwise {
+  box-shadow: 0 4px 6px -1px rgba(28, 34, 66, 0.1), 0 2px 4px -1px rgba(28, 34, 66, 0.06);
+}
+
+.shadow-connectwise-lg {
+  box-shadow: 0 10px 15px -3px rgba(28, 34, 66, 0.1), 0 4px 6px -2px rgba(28, 34, 66, 0.05);
+}
+
+/* Responsive text sizing for the brand name */
+@media (max-width: 1024px) {
+  .text-2xl.font-bold.text-connectwise-primary {
+    font-size: 1.25rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .text-2xl.font-bold.text-connectwise-primary {
+    font-size: 1.125rem;
+  }
 }
